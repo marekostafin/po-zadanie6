@@ -7,7 +7,7 @@ const Zamowienia = ({ shoppingCartItems }) => {
             <h2>Zamówienia</h2>
             <ul>
                 {shoppingCartItems.map(item => (
-                    <li id={item.id}>
+                    <li key={item.id}>
                         {item.valueOf()}
                     </li>
                 ))}
