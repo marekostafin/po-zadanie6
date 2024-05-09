@@ -32,7 +32,7 @@ const Platnosci = () => {
             <h2>Payments</h2>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Kwota:
+                    Kwota:{' '}
                     <input type="text" name="amount" value={paymentData.amount} onChange={handleInputChange} />
                 </label>
                 <button type="submit">Pay</button>

@@ -19,7 +19,7 @@ const Uslugi = ({ addToCart }) => {
             <h2>Uslugi</h2>
             <ul>
                 {products.map(product => (
-                    <li>
+                    <li key={product.id}>
                         {product.valueOf()}
                         <button onClick={() => handleAddToCart(product)}>Dodaj zamówienie</button>
                     </li>
@@ -27,6 +27,15 @@ const Uslugi = ({ addToCart }) => {
             </ul>
         </div>
     );
+};
+
+Uslugi.propTypes = {
+    addToCart: (props, propName, componentName) => {
+        if (typeof props[propName] !== 'function') {
+            return new Error(`Invalid prop '${propName}' supplied to '${componentName}'. 
+            Expected a function.`);
+        }
+    }
 };
 
 export default Uslugi;

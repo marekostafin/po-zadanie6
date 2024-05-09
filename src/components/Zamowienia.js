@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Zamowienia = ({ shoppingCartItems }) => {
     return (
@@ -6,13 +7,17 @@ const Zamowienia = ({ shoppingCartItems }) => {
             <h2>Zamówienia</h2>
             <ul>
                 {shoppingCartItems.map(item => (
-                    <li>
+                    <li id={item.id}>
                         {item.valueOf()}
                     </li>
                 ))}
             </ul>
         </div>
     );
+};
+
+Zamowienia.propTypes = {
+    shoppingCartItems: PropTypes.array.isRequired
 };
 
 export default Zamowienia;
